@@ -10,3 +10,20 @@ body {
     line-height: 1.6;
     margin: 0;
 }
+
+header {
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    color: white;
+    padding: 20px;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    margin-right: 15px;
+    font-weight: 500;
+}
