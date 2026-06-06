@@ -106,3 +106,16 @@ p {
 4. Pseudo-class selector: a:hover, tr:nth-child(even)
 , tr:hover
 5. Universal selector: *
+
+## Câu B2:
+
+- Hộp 1 (content-box): chiều rộng thực tế = 350px  
+- Hộp 2 (border-box): chiều rộng thực tế = 300px  
+
+** Giải thích
+- Với content-box: width chỉ tính phần content
+-> Tổng chiều rộng = content (300px) + padding (40px) + border (10px)
+-> 300 + 40 + 10 = 350px
+
+- Với border-box: width đã bao gồm content + padding + border
+-> Tổng chiều rộng vẫn là 300px
