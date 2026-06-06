@@ -139,3 +139,20 @@ p {
 3. ![alt text](PBT3_B3.png)
 
 4. Nếu thay đổi thứ tự rules trong CSS file kết quả không đổi vì CSS không ưu iên vị trí khi specificity khác nhau và chỉ khi specificity bằng nhau mới xét thứ tự
+
+## PHẦN C:
+
+## Câu C1:
+
+1. - Chiều rộng thực tế của sidebar:
+    + width = 300px
+    + padding = 20px (2 bên = 40px)
+    + border = 1px (2 bên = 2px)
+    -> Tổng = 300 + 40 + 2 = 342px
+   - Chiều rộng thực tế của content (content-box!): 
+    + width = 660px
+    + padding = 30px (2 bên = 60px)
+    + border = 1px (2 bên = 2px)
+    -> Tổng = 660 + 60 + 2 = 722px
+
+2. Layout bị vỡ vì container là 960px mà tổng chiều rộng của sidebar và content là 1064px nên không còn đủ khoảng trống trên cùng một hàng, khiến khối content bị đẩy xuống dòng tiếp theo
