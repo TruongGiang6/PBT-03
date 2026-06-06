@@ -156,3 +156,19 @@ p {
     -> Tổng = 660 + 60 + 2 = 722px
 
 2. Layout bị vỡ vì container là 960px mà tổng chiều rộng của sidebar và content là 1064px nên không còn đủ khoảng trống trên cùng một hàng, khiến khối content bị đẩy xuống dòng tiếp theo
+
+## Câu C2:
+
+1. "Sản phẩm A" (h2)
+- font-size = 20px vì rule .card .title nhắm trực tiếp vào thẻ h2 này. Trong CSS, các thuộc tính được xác định trực tiếp sẽ luôn thắng các thuộc tính được kế thừa từ cha (như body hay .container)
+- color = green vì có 3 rule cùng tác động đến màu sắc của thẻ này: .card (blue), #featured .title (red), và .highlight (green !important). Mặc dù ID selector (#featured .title) có độ ưu tiên cao hơn class, nhưng từ khóa !important trong rule .highlight là mức ưu tiên cao nhất, do đó màu xanh lá cây được áp dụng
+
+2. "Mô tả sản phẩm" (p trong card featured)
+-color = blue vì thẻ p này có thuộc tính color: inherit. Thuộc tính này ép thẻ p phải lấy giá trị màu từ phần tử cha trực tiếp của nó là .card thay vì lấy từ body. Vì .card có màu xanh da trời (blue), nên thẻ p này hiển thị màu xanh da trời
+
+3. "Sản phẩm B" (h2)
+-font-size = 20px vì tương tự Sản phẩm A, rule .card .title nhắm trực tiếp vào phần tử này với độ ưu tiên cao hơn các giá trị kế thừa.
+-color = blue vì rule #featured .title không áp dụng cho thẻ này vì nó không nằm trong ID featured. Rule .highlight cũng không có trên thẻ này. Do đó, nó kế thừa màu sắc từ phần tử cha trực tiếp là .card
+
+4. "Mô tả sản phẩm B" (p.highlight)
+-color = green: mặc dù thẻ p trong .card thường nhận thuộc tính color: inherit (màu xanh), nhưng thẻ này có class .highlight. Quy tắc Cascade quy định rằng một selector trực tiếp (.highlight) sẽ ghi đè thuộc tính được kế thừa. Đặc biệt, với sự xuất hiện của !important, màu xanh lá cây (green) sẽ chiếm ưu thế tuyệt đối
