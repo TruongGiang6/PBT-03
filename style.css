@@ -27,3 +27,14 @@ nav a {
     margin-right: 15px;
     font-weight: 500;
 }
+
+nav a:hover {
+    color: yellow;
+    text-decoration: underline;
+}
+
+
+nav a.active {
+    font-weight: bold;
+    border-bottom: 2px solid white;
+}
