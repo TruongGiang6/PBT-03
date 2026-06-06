@@ -119,3 +119,23 @@ p {
 
 - Với border-box: width đã bao gồm content + padding + border
 -> Tổng chiều rộng vẫn là 300px
+
+## Câu B3:
+
+1. Danh sách các rule:
+- p -> (0,0,1)
+- .text -> (0,1,0)
+- .highlight -> (0,1,0)
+- p[class] -> (0,1,1)
+- body p -> (0,0,2)
+- .text.highlight -> (0,2,0)
+- #demo -> (1,0,0)
+- #demo.text -> (1,1,0)
+- #demo.text.highlight -> (1,2,0)
+- .force (!important) -> override tất cả
+
+2. Element cuối cùng hiển thị màu teal vì CSS chọn rule có specificity cao nhất
+ 
+3. ![alt text](PBT3_B3.png)
+
+4. Nếu thay đổi thứ tự rules trong CSS file kết quả không đổi vì CSS không ưu iên vị trí khi specificity khác nhau và chỉ khi specificity bằng nhau mới xét thứ tự
