@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.box{
+    width: 300px;
+    padding: 20px;
+    border: 5px solid black;
+    background-color: #f0f0f0;
+}
+
+.box1 {
+    box-sizing: content-box;
+    background-color: #ffcdd2;
+}
+
+.box2 {
+    box-sizing: border-box;
+    background-color: #c8e6c9;
+}
