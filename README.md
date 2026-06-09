@@ -14,8 +14,6 @@ PBT-03/
 ├── answers.md
 ├── boxmodel_lab.html
 ├── boxmodel.css
-├── C2.html
-├── C2.css
 ├── debug_layout.html
 ├── debug_layout.css
 ├── profile.html
@@ -36,8 +34,8 @@ PBT-03/
 
 ## 👤 Thông tin sinh viên
 - **Họ và tên:** Vũ Trường Giang
+- **MSV:** 2451170885
 - **Trường:** Đại học Thủy Lợi (TLU)
-- **Kỹ năng:** C# (WinForms), HTML...
 
 ## 🚀 Cách xem dự án
 Mở trực tiếp các tệp `.html` trong trình duyệt web để xem kết quả.
