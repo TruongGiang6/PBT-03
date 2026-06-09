@@ -99,46 +99,54 @@ p {
 
 ## Câu B1:
 
-** Các loại selector đã sử dụng:
-1. Element selector: body, header, table, footer
-2. Class selector: .active
-3. Descendant selector: nav a
-4. Pseudo-class selector: a:hover, tr:nth-child(even)
-, tr:hover
-5. Universal selector: *
+- Liệt kê 5 loại selector đã sử dụng trong `style.css`
+1.  **Element Selector:** `body`, `header`, `table`, `th`, `td` (Định dạng cơ bản cho thẻ HTML).
+2.  **Class Selector:** `.active` (Định dạng cho link navigation đang được chọn).
+3.  **ID Selector:** `#main-footer` (Định dạng cho phần chân trang).
+4.  **Descendant Selector:** `nav ul li a` (Target cụ thể các thẻ `a` nằm trong `li`, `ul`, `nav`).
+5.  **Pseudo-class Selector:** `:hover` (cho `a` và `tr`), `:nth-child(even)` (cho dải màu ngựa vằn của bảng).
 
 ## Câu B2:
 
-- Hộp 1 (content-box): chiều rộng thực tế = 350px  
-- Hộp 2 (border-box): chiều rộng thực tế = 300px  
+**Phần 1:**
+* **Hộp 1 (content-box):** chiều rộng thực tế = **350px** (đo từ DevTools).
+* **Hộp 2 (border-box):** chiều rộng thực tế = **300px** (đo từ DevTools).
+* **Giải thích:**
+    * Với `content-box`, `width` (300px) chỉ tính phần nội dung. Chiều rộng thực tế = width + padding trái/phải (20px*2) + border trái/phải (5px*2) = 300 + 40 + 10 = 350px.
+    * Với `border-box`, `width` (300px) đã bao gồm cả padding và border. Trình duyệt tự thu hẹp phần nội dung bên trong lại để tổng chiều rộng vẫn giữ nguyên là 300px.
 
-** Giải thích
-- Với content-box: width chỉ tính phần content
--> Tổng chiều rộng = content (300px) + padding (40px) + border (10px)
--> 300 + 40 + 10 = 350px
-
-- Với border-box: width đã bao gồm content + padding + border
--> Tổng chiều rộng vẫn là 300px
+**Phần 2:**
+* Nếu KHÔNG dùng `border-box` (dùng `content-box`):
+    * Cột trái: 250 + 15(padding trái) + 15(padding phải) = 280px
+    * Cột giữa: 500 + 20 + 20 = 540px
+    * Cột phải: 250 + 15 + 15 = 280px
+    * Tổng = 280 + 540 + 280 = **1100px**. Vì 1100px > 1000px (container) nên cột cuối cùng sẽ bị rớt xuống dòng, làm vỡ layout.
 
 ## Câu B3:
 
-1. Danh sách các rule:
-- p -> (0,0,1)
-- .text -> (0,1,0)
-- .highlight -> (0,1,0)
-- p[class] -> (0,1,1)
-- body p -> (0,0,2)
-- .text.highlight -> (0,2,0)
-- #demo -> (1,0,0)
-- #demo.text -> (1,1,0)
-- #demo.text.highlight -> (1,2,0)
-- .force (!important) -> override tất cả
+### Bài B3: Specificity Battle
 
-2. Element cuối cùng hiển thị màu teal vì CSS chọn rule có specificity cao nhất
+**Danh sách 10 rules:**
+1.  `*` { color: black; }  -> Specificity: 0,0,0
+2.  `p` { color: gray; } -> Specificity: 0,0,1
+3.  `.text` { color: green; } -> Specificity: 0,1,0
+4.  `.text.highlight` { color: blue; } -> Specificity: 0,2,0
+5.  `#demo` { color: purple; } -> Specificity: 1,0,0
+6.  `p#demo` { color: orange; } -> Specificity: 1,0,1
+7.  `#demo.text` { color: pink; } -> Specificity: 1,1,0
+8.  `#demo.text.highlight` { color: brown; } -> Specificity: 1,2,0
+9.  `body p#demo.text.highlight` { color: teal; } -> Specificity: 1,2,1
+10. `p { color: red !important; }` -> Specificity: Đánh bại tất cả.
+
+**Trả lời câu hỏi:**
+* **1.Element cuối cùng hiển thị màu gì? Tại sao?**
+    * Hiển thị màu **Đỏ (red)**. Vì rule thứ 10 sử dụng `!important`, nó có độ ưu tiên cao nhất, vượt qua mọi công thức tính điểm thông thường (kể cả ID).
+* **2. ![alt text](PBT3_B3.png)**
+* **3.Thay đổi thứ tự rules trong CSS file. Kết quả có đổi không? Giải thích.**
+    * Nếu không có `!important`, thay đổi thứ tự các rule CÓ CÙNG ĐIỂM specificity thì rule viết sau (bên dưới) sẽ ghi đè rule trước. 
+    * Nếu khác điểm specificity, thứ tự viết KHÔNG ảnh hưởng. Rule điểm cao luôn thắng.
+    * Trong ví dụ này do dùng `!important` nên dù đổi thứ tự thế nào, nó vẫn sẽ màu đỏ.
  
-3. ![alt text](PBT3_B3.png)
-
-4. Nếu thay đổi thứ tự rules trong CSS file kết quả không đổi vì CSS không ưu iên vị trí khi specificity khác nhau và chỉ khi specificity bằng nhau mới xét thứ tự
 
 ## PHẦN C:
 

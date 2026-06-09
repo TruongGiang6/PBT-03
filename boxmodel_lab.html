@@ -2,20 +2,35 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Box Model Lab</title>
     <link rel="stylesheet" href="boxmodel.css">
 </head>
 <body>
-    <h1>So sánh content box và border box</h1>
+    <h2>Phần 1 — Chứng minh content-box vs border-box</h2>
+    <div class="box-container">
+        <div class="box box-content">
+            Hộp 1: content-box (Mặc định)<br>
+            Width: 300px, Padding: 20px, Border: 5px
+        </div>
+        <div class="box box-border">
+            Hộp 2: border-box<br>
+            Width: 300px, Padding: 20px, Border: 5px
+        </div>
+    </div>
 
-    <div class="container">
-        <div class="box box1">
-            <p>Box 1: Content Box</p>
-        </div>
-        <div class="box box2">
-            <p>Box 2: Border Box</p>
-        </div>
+    <h2>Phần 2 — Layout 3 cột</h2>
+    <h3>Trường hợp 1: Sử dụng border-box (Tổng = 1000px, KHÔNG vỡ layout)</h3>
+    <div class="container container-border-box">
+        <div class="sidebar">Sidebar (250px)</div>
+        <div class="content">Content (500px)</div>
+        <div class="ads">Ads (250px)</div>
+    </div>
+
+    <h3>Trường hợp 2: KHÔNG sử dụng border-box (content-box mặc định) (Vỡ layout)</h3>
+    <div class="container container-content-box">
+        <div class="sidebar">Sidebar</div>
+        <div class="content">Content</div>
+        <div class="ads">Ads</div>
     </div>
 </body>
 </html>

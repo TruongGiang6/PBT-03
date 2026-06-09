@@ -1,81 +1,101 @@
-
+/* 1. Dòng đầu tiên: border-box reset */
 * {
     box-sizing: border-box;
 }
 
+/* 2. Body styling */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f6f8;
-    color: #333;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333333;
     line-height: 1.6;
     margin: 0;
 }
 
+/* 3. Header styling */
 header {
-    background: linear-gradient(to right, #4facfe, #00f2fe);
+    background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
     color: white;
     padding: 20px;
+    text-align: center;
 }
 
-nav {
-    margin-top: 10px;
+/* 4. Navigation links styling */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    background-color: #333;
+    margin: 0;
 }
 
-nav a {
+nav ul li {
+    display: inline-block;
+}
+
+/* Selector 1: Descendant (nav ul li a) & Pseudo-class (:link, :visited) */
+nav ul li a {
+    display: block;
+    padding: 15px 20px;
     text-decoration: none;
-    color: white;
-    margin-right: 15px;
-    font-weight: 500;
+    color: #cccccc; /* Màu mặc định */
 }
 
-nav a:hover {
-    color: yellow;
+/* Hover: đổi màu + gạch chân (dùng :hover) */
+/* Selector 2: Pseudo-class (:hover) */
+nav ul li a:hover {
+    color: white;
     text-decoration: underline;
 }
 
-
-nav a.active {
+/* Link đang active: kiểu khác biệt (dùng .active) */
+/* Selector 3: Class selector (.active) */
+nav ul li a.active {
+    background-color: #4facfe;
+    color: white;
     font-weight: bold;
-    border-bottom: 2px solid white;
 }
 
-main {
-    padding: 20px;
-}
-
-
+/* 5. Table kỹ năng */
+/* Selector 4: Element selector (table) */
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse; /* Bắt buộc */
+    background-color: white;
 }
 
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
 
+/* Header row: background đậm, text trắng */
 th {
     background-color: #333;
     color: white;
-    padding: 10px;
 }
 
-
-td {
-    padding: 10px;
-    border: 1px solid #ddd;
-}
-
+/* Zebra striping: dùng tr:nth-child(even) */
+/* Selector 5: Pseudo-class (:nth-child) */
 tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
-
+/* Hover row: đổi background (dùng tr:hover) */
 tr:hover {
     background-color: #ddd;
 }
 
-footer {
+/* 6. Footer styling */
+/* Selector 6: ID selector (#main-footer) */
+#main-footer {
     background-color: #222;
-    color: #ccc;
+    color: #aaaaaa;
     text-align: center;
-    padding: 15px;
-    margin-top: 20px;
+    padding: 15px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
